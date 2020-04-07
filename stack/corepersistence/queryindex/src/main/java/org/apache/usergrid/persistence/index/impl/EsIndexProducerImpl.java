@@ -108,7 +108,7 @@ public class EsIndexProducerImpl implements IndexProducer {
      * @param batch
      * @return
      */
-    private Observable<IndexOperationMessage> processBatch( final IndexOperationMessage batch ) {
+    private synchronized Observable<IndexOperationMessage> processBatch( final IndexOperationMessage batch ) {
 
         //take our stream of batches, then stream then into individual ops for consumption on ES
         final Set<IndexOperation> indexOperationSet = batch.getIndexRequests();
