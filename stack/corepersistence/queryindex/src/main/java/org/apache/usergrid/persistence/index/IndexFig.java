@@ -166,7 +166,7 @@ public interface IndexFig extends GuicyFig {
     /**
      * The batch size to use when sending batched index write requests to Elasticsearch.
      */
-    @Default( "2" )
+    @Default( "1000" )
     @Key( INDEX_BATCH_SIZE )
     int getIndexBatchSize();
 
