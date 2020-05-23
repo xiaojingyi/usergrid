@@ -54,10 +54,12 @@ public class SearchRequestBuilderStrategyV2 {
     }
 
     public SearchRequestBuilder getBuilder(){
+//         SearchRequestBuilder srb =
+//             esProvider.getClient().prepareSearch( alias.getReadAlias() ).setPreference("_local").setTypes( IndexingUtils.ES_ENTITY_TYPE ).setSearchType(
+//                 SearchType.QUERY_THEN_FETCH);
         SearchRequestBuilder srb =
-            esProvider.getClient().prepareSearch( alias.getReadAlias() ).setPreference("_local").setTypes( IndexingUtils.ES_ENTITY_TYPE ).setSearchType(
+            esProvider.getClient().prepareSearch( alias.getReadAlias() ).setTypes( IndexingUtils.ES_ENTITY_TYPE ).setSearchType(
                 SearchType.QUERY_THEN_FETCH);
-
 
         return srb;
     }
