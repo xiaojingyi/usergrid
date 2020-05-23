@@ -68,7 +68,7 @@ public class EsIndexProducerImpl implements IndexProducer {
 
     private AtomicLong inFlight = new AtomicLong();
 
-    public static Semaphore ES_MAX_THREAD_COUNT;
+//     public static Semaphore ES_MAX_THREAD_COUNT;
 
 
     @Inject
