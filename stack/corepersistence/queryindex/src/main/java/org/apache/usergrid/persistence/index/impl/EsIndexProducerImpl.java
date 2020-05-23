@@ -189,16 +189,16 @@ public class EsIndexProducerImpl implements IndexProducer {
      * send bulk request
      */
     private void sendRequest( BulkRequestBuilder bulkRequest ) {
+        //nothing to do, we haven't added anything to the index
+        if ( bulkRequest.numberOfActions() == 0 ) {
+            return;
+        }
+        
         try {
             //这里控制并发数,避免把es跑出错 by qiongwei.cai 2020.04.08
             ES_MAX_THREAD_COUNT.acquire();
         } catch (InterruptedException e) {
             throw new RuntimeException("sendRequest获取运行资格失败", e);
-        }
-
-        //nothing to do, we haven't added anything to the index
-        if ( bulkRequest.numberOfActions() == 0 ) {
-            return;
         }
 
         final BulkResponse responses;
