@@ -193,13 +193,13 @@ public class EsIndexProducerImpl implements IndexProducer {
         if ( bulkRequest.numberOfActions() == 0 ) {
             return;
         }
-        
+        /*
         try {
             //这里控制并发数,避免把es跑出错 by qiongwei.cai 2020.04.08
             ES_MAX_THREAD_COUNT.acquire();
         } catch (InterruptedException e) {
             throw new RuntimeException("sendRequest获取运行资格失败", e);
-        }
+        }*/
 
         final BulkResponse responses;
 
@@ -252,6 +252,6 @@ public class EsIndexProducerImpl implements IndexProducer {
             throw new RuntimeException(
                 "Error during processing of bulk index operations one of the responses failed. \n" + errorString);
         }
-        ES_MAX_THREAD_COUNT.release();
+        //ES_MAX_THREAD_COUNT.release();
     }
 }
