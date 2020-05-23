@@ -84,12 +84,12 @@ public class SearchRequestBuilderStrategy {
         Preconditions
             .checkArgument( limit <= EntityIndex.MAX_LIMIT, "limit is greater than max " + EntityIndex.MAX_LIMIT );
 
+//         SearchRequestBuilder srb =
+//             esProvider.getClient().prepareSearch( alias.getReadAlias() ).setTypes( IndexingUtils.ES_ENTITY_TYPE )
+//                       .setSearchType( SearchType.QUERY_THEN_FETCH );
         SearchRequestBuilder srb =
-            esProvider.getClient().prepareSearch( alias.getReadAlias() ).setTypes( IndexingUtils.ES_ENTITY_TYPE )
-                      .setSearchType( SearchType.QUERY_THEN_FETCH );
-        /*SearchRequestBuilder srb =
             esProvider.getClient().prepareSearch( alias.getReadAlias() ).setPreference("_local").setTypes( IndexingUtils.ES_ENTITY_TYPE )
-                      .setSearchType( SearchType.QUERY_THEN_FETCH );*/
+                      .setSearchType( SearchType.QUERY_THEN_FETCH );
 
 
         final QueryVisitor visitor = visitParsedQuery( query );
