@@ -20,8 +20,8 @@ package org.apache.usergrid.persistence.index.impl;
 
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
+//import java.util.concurrent.Semaphore;
+//import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.codahale.metrics.Histogram;
